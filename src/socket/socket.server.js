@@ -6,7 +6,7 @@ import agent  from '../agent/agent.js';
 export const initSocketServer = async (server) => {
     const io = new Server(server, {
         cors: {
-            origin: 'https://revoire.vercel.app',
+            origin: 'https://revoire.netlify.app',
             methods: ['GET', 'POST'],
             credentials: true,
         },

@@ -9,7 +9,7 @@ const searchProduct = tool(
         console.log("searchProduct called with data:", { query, token });
 
         const response = await axios.get(
-            `http://localhost:3001/api/products?q=${query}`,
+            `https://revoire-product.onrender.com/api/products?q=${query}`,
             {
                 headers: {
                     Authorization: `Bearer ${token}`,
@@ -31,7 +31,7 @@ const searchProduct = tool(
 const addProductToCart = tool(
     async ({ productId, qty = 1, token }) => {
         const response = await axios.post(
-            `http://localhost:3002/api/cart/items`,
+            `https://revoire-cart.onrender.com/api/cart/items`,
             {
                 productId,
                 qty,
@@ -61,7 +61,7 @@ const addProductToCart = tool(
 const addProductToWishlist = tool(
     async ({ productId, token }) => {
         const response = await axios.post(
-            `http://localhost:3002/api/wishlist/items`,
+            `https://revoire-wishlist.onrender.com/api/wishlist/items`,
             {
                 productId,
             },
@@ -86,7 +86,7 @@ const addProductToWishlist = tool(
 const getUserCart = tool(
     async ({ token }) => {
         const response = await axios.get(
-            `http://localhost:3002/api/cart`,
+            `https://revoire-cart.onrender.com/api/cart`,
             {
                 headers: {
                     Authorization: `Bearer ${token}`,
@@ -106,7 +106,7 @@ const getUserCart = tool(
 const getUserWishlist = tool(
     async ({ token }) => {
         const response = await axios.get(
-            `http://localhost:3002/api/wishlist`,
+            `https://revoire-wishlist.onrender.com/api/wishlist`,
             {
                 headers: {
                     Authorization: `Bearer ${token}`,
@@ -126,7 +126,7 @@ const getUserWishlist = tool(
 const getUserRecentOrders = tool(
     async ({ token }) => {
         const response = await axios.get(
-            `http://localhost:3005/api/orders/me`,
+            `https://revoire-order.onrender.com/api/orders/me`,
             {
                 headers: {
                     Authorization: `Bearer ${token}`,
@@ -146,7 +146,7 @@ const getUserRecentOrders = tool(
 const getSomeProducts = tool(
     async ({ token }) => {
         const response = await axios.get(
-            `http://localhost:3001/api/products?limit=5`,
+            `https://revoire-product.onrender.com/api/products?limit=5`,
             {
                 headers: {
                     Authorization: `Bearer ${token}`,
